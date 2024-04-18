@@ -38,23 +38,33 @@ Instructions for setting up and Social Media App. It include both the setup with
 1. **Clone the repository:**
 
     ```bash
-    git clone <repository_url>
-    cd <project_directory>
+    git clone git@github.com:vis7/social_media_app.git
+    cd social_media_app
     ```
 
 2. **Install dependencies:**
 
     ```bash
+    sudo apt install python3-virtualenv
+    virtualenv venv
+    source venv/bin/activate
     pip install -r requirements.txt
     ```
 
-3. **Apply migrations:**
+3. **Add .env file along with below settings and add it parallel to settins.py:**
+
+   ```bash
+      SECRET_KEY='django-insecure-7sxch!f7g%nuf^yrvz5&1fl32++w!8o1*3cu3t8+hl+$z)e=)c'
+      DEBUG=True
+   ```
+
+4. **Apply migrations:**
 
     ```bash
     python manage.py migrate
     ```
 
-4. **Run the development server:**
+5. **Run the development server:**
 
     ```bash
     python manage.py runserver
@@ -66,30 +76,35 @@ Instructions for setting up and Social Media App. It include both the setup with
 1. **Clone the repository:**
 
     ```bash
-    git clone <repository_url>
-    cd <project_directory>
+    git clone git@github.com:vis7/social_media_app.git
+    cd social_media_app
     ```
 
-2. **Build the Docker image:**
+2. **Add .env file along with below settings and add it parallel to settins.py:**
+
+   ```bash
+      SECRET_KEY='django-insecure-7sxch!f7g%nuf^yrvz5&1fl32++w!8o1*3cu3t8+hl+$z)e=)c'
+      DEBUG=True
+   ```
+
+
+3. **Build the Docker image:**
 
     ```bash
-    docker build -t django-app .
+    docker build -t social_media_app .
     ```
 
-3. **Run the Docker container:**
+4. **Run the Docker container:**
 
     ```bash
-    docker run -p 8000:8000 django-app
+    docker run -p 8000:8000 social_media_app
     ```
 
+5. **You can also run above using docker compose up:**
 
-## Configuration
-
-Add .env file along with below settings and add it parallel to settins.py
-```
-SECRET_KEY='django-insecure-7sxch!f7g%nuf^yrvz5&1fl32++w!8o1*3cu3t8+hl+$z)e=)c'
-DEBUG=True
-```
+   ```bash
+   docker compose up --build -d
+   ```
 
 ## Usage
 
